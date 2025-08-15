@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": { "installCommand": "pnpm install --no-frozen-lockfile" }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/dist/spa/$1" }
+  ]
+}
